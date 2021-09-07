@@ -25,7 +25,7 @@ const Story = (props: StoryProps): JSX.Element => {
         />
       );
     }
-    return <Author username={storyData.by} />;
+    return <Author username={storyData.by} karmaScore={null} />;
   };
 
   return (

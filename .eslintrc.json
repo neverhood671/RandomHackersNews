@@ -8,15 +8,13 @@
     "plugins": [
         "@typescript-eslint",
         "react-hooks",
-        "jest",
         "risxss"
     ],
     "extends": [
         "airbnb",
         "airbnb-typescript",
         "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "plugin:jest/recommended"
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
     ],
     "rules": {
         "react-hooks/rules-of-hooks": "error",
