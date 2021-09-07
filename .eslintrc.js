@@ -1,4 +1,4 @@
-{
+module.exports = {
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": 2018,
@@ -21,7 +21,8 @@
         "react-hooks/exhaustive-deps": "warn",
         "react/prop-types": "off",
         "react/no-danger": "off",
-        "risxss/catch-potential-xss-react": "error"
+        "risxss/catch-potential-xss-react": "error",
+        "linebreak-style": ["error", process.platform === "win32" ? "windows" : "unix"]
     },
     "settings": {
         "react": {
@@ -29,4 +30,4 @@
             "version": "detect"
         }
     }
-}
+};
