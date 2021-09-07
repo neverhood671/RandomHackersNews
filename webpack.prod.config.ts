@@ -4,6 +4,8 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const config: Configuration = {
     mode: "production",
@@ -18,7 +20,7 @@ const config: Configuration = {
             {
                 test: /\.s[ac]ss$/i,
                 use: [
-                    "style-loader",
+                    MiniCssExtractPlugin.loader,
                     "css-loader",
                     {
                         loader: "sass-loader",
@@ -51,10 +53,14 @@ const config: Configuration = {
     resolve: {
         extensions: [".tsx", ".ts", ".js"],
     },
+    optimization: {
+        minimizer: [new CssMinimizerPlugin()],
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: "src/index.html",
         }),
+        new MiniCssExtractPlugin(),
         new ForkTsCheckerWebpackPlugin({
             async: false,
         }),
