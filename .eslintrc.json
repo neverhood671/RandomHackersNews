@@ -2,20 +2,28 @@
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": 2018,
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "./tsconfig.json"
     },
     "plugins": [
         "@typescript-eslint",
-        "react-hooks"
+        "react-hooks",
+        "jest",
+        "risxss"
     ],
     "extends": [
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "airbnb",
+        "airbnb-typescript",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:jest/recommended"
     ],
     "rules": {
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+        "react/no-danger": "off",
+        "risxss/catch-potential-xss-react": "error"
     },
     "settings": {
         "react": {

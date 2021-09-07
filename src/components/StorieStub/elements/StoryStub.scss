@@ -1,0 +1,41 @@
+@import "../../../assets/styles/colors";
+@import "../../../assets/styles/animation";
+
+
+.story-stub {
+  background-color: $white;
+  border-bottom: 1px solid $gray;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  padding: 16px;
+  height: 200px;
+  width: 100%;
+
+  &__elem {
+    background: $gray;
+    animation: $fade-in-out-animation;
+    height: 20px;
+    border-radius: 3px;
+    margin: 20px 10px;
+    width: 100%;
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  &__body {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__score {
+    width: 50px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}

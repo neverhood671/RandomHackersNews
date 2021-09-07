@@ -1,0 +1,42 @@
+@import "reset.css";
+@import "breakpoints";
+@import "colors";
+
+
+body {
+  background: $light-gray;
+}
+
+h1 {
+  color: $dark-gray;
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 700;
+  margin: 40px auto;
+  text-align: center;
+
+  @include md {
+    font-size: 40px;
+  }
+}
+
+.stories-wrapper {
+  width: 100%;
+
+  @include md {
+    margin: 0 auto;
+    max-width: 768px;
+  }
+
+  &__go-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+
+    @include lg {
+      right: calc((100vw - 768px) / 2 - 100px);
+    }
+  }
+}
